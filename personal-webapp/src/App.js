@@ -3,6 +3,8 @@ import Navbar from "./components/navbar";
 import WelcomeText from "./components/welcomeText";
 import RightImage from "./components/rightImg";
 import Social from "./components/social";
+import ScrollIndicator from "./components/scrollIndicator";
+import Copyright from "./components/copyright";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <RightImage />
         </div>
       </div>
+      <ScrollIndicator />
+      <Copyright />
     </div>
   );
 }

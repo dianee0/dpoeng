@@ -1,10 +1,10 @@
 import "./navbar.css";
-import logo from "../LogoD.svg";
+import AnimatedLogo from "./animatedLogo";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <img src={logo} alt="logo" className="logo" />
+      <AnimatedLogo />
       <div className="nav-links">
         <div className="navbar-about">About</div>
         <div className="navbar-projects">Projects</div>

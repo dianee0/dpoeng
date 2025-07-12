@@ -1,0 +1,33 @@
+.copyright {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 50;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.copyright:hover {
+  opacity: 1;
+}
+
+.copyright p {
+  font-family: "Jura", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #586e3f;
+  margin: 0;
+  text-align: right;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .copyright {
+    bottom: 5px;
+    right: 10px;
+  }
+
+  .copyright p {
+    font-size: 10px;
+  }
+}
