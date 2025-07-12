@@ -1,7 +1,7 @@
 # Welcome to My Personal Website
 
 This project contains scripts for my personal website!
-
+<img width="1512" height="982" alt="Image" src="https://github.com/user-attachments/assets/9504a046-2fb8-4a3a-84eb-e88e883da44d" />
 ## Technolgies used:
 
 React, javascript, CSS, and designed with Figma!
@@ -10,11 +10,10 @@ React, javascript, CSS, and designed with Figma!
 
 ### cd personal-webapp
 
-Which will take you to the correct path.
-
+Which will take you to the correct path. \
+`The following instructions are obtain via React format by running npx create-react-app <project-name>` 
 ### `npm start`
 
-`The following instructions are obtain via React format by running npx create-react-app <project-name>`
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
