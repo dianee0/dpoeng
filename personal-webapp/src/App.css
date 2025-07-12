@@ -11,3 +11,27 @@
   /* Set Jura as the default font family */
   font-family: "Jura", sans-serif;
 }
+
+.main-content {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  padding-top: 90px; /* Account for navbar height */
+  box-sizing: border-box;
+}
+
+.left-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.right-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}

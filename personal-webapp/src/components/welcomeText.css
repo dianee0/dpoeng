@@ -1,0 +1,33 @@
+/* .welcomeText {
+
+} */
+
+.welcomeText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 600px;
+}
+
+.mainText {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(32px, 8vw, 96px);
+  line-height: 1.1;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 20px;
+}
+/* My name is Diane Poeng and I am an aspiring Full-Stack Developer. */
+.subText {
+  font-family: "Jura";
+  font-style: normal;
+  font-weight: 100;
+  font-size: clamp(18px, 3vw, 48px);
+  line-height: 1.2;
+  text-align: center;
+  color: #000000;
+}
