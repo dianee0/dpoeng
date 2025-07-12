@@ -1,7 +1,7 @@
 # Welcome to My Personal Website
 
 This project contains scripts for my personal website!
-<img width="1512" height="982" alt="Image" src="https://github.com/user-attachments/assets/9504a046-2fb8-4a3a-84eb-e88e883da44d" />
+<img width="2940" height="1664" alt="Image" src="https://github.com/user-attachments/assets/ae80def2-1c5e-412f-8fed-56d474bb8956" />
 ## Technolgies used:
 
 React, javascript, CSS, and designed with Figma!
