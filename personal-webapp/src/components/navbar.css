@@ -58,8 +58,38 @@
 .navbar-contact:hover,
 .navbar-projects:hover,
 .navbar-skills:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  color: #718856;
+  animation: greenFlicker 1.5s infinite alternate;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.navbar-about::before,
+.navbar-resume::before,
+.navbar-contact::before,
+.navbar-projects::before,
+.navbar-skills::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #718856;
+  visibility: hidden;
+  clip: rect(0, 0, 0, 0);
+  transition: all 0.5s ease;
+}
+
+.navbar-about:hover::before,
+.navbar-resume:hover::before,
+.navbar-contact:hover::before,
+.navbar-projects:hover::before,
+.navbar-skills:hover::before {
+  visibility: visible;
+  clip: rect(0, 900px, 0, 0);
+  animation: greenFlicker 1.5s infinite alternate;
 }
 
 /* Large screens (desktop) */
@@ -133,5 +163,18 @@
     font-size: 14px;
     min-width: 50px;
     padding: 5px 8px;
+  }
+}
+
+@keyframes greenFlicker {
+  0%,
+  100% {
+    text-shadow: 0 0 5px #718856, 0 0 10px #718856, 0 0 15px #ffffff,
+      0 0 20px #ffffff, 0 0 25px #ffffff, 0 0 30px #ffffff, 0 0 35px #ffffff;
+  }
+  50% {
+    text-shadow: 0 0 5px #718856, 0 0 10px #718856, 0 0 15px #ffffff,
+      0 0 20px #ffffff, 0 0 25px #ffffff, 0 0 30px #ffffff, 0 0 35px #ffffff,
+      0 0 40px #ffffff, 0 0 50px #ffffff, 0 0 75px #ffffff;
   }
 }
