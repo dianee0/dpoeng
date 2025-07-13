@@ -1,0 +1,48 @@
+
+.card {
+    box-shadow: 0 4px 8px 0 #718856;
+    background-color: #f6f7f5;
+    width: 350px;
+    border-radius: 25px;
+}
+
+.Cards{
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    
+}
+
+.smallCard{
+    /* background-color: #ffffff; */
+    box-shadow: 0 1px 8px 0 #718856;
+    background-color: #f6f7f5;
+    width: 270px;
+    height: 60px;
+    padding-inline-start: 10px;
+    border-radius: 15px;
+}
+
+.smallCard:last-child {
+  margin-bottom: 20px; /* Match the gap value in .container */
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 #718856;
+}
+
+.card-separator {
+  width: 80%;
+  border: none;
+  border-top: 2px solid #718856;
+  margin: 0px 0 20px 0;
+}

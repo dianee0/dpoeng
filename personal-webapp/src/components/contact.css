@@ -1,0 +1,72 @@
+.contact-section {
+    display: flex;
+    align-items: center; /* vertically center img and the form */
+    justify-content: center; /* Centers the whole section horizontally */
+    gap: 100px; /* gap between image and form */
+}
+
+.picture-side {
+    width: 420px;
+    flex-shrink: 0;
+}
+
+.picture-side img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.message-container {
+    flex: 1;
+    max-width: 600px;
+}
+
+.input-container {
+    width: 600px;
+    margin-bottom: 100px;
+}
+
+.input-container label {
+    font-size: 1.3rem;
+}
+
+.input-container input,
+.input-container textarea {
+    font-size: 1.2rem;
+    height: 48px;
+    padding: 10px;
+}
+
+.input-container textarea {
+    height: 140px;
+}
+
+/* stacking label on top of input */
+.input-container label,
+.input-container input,
+.input-container textarea,
+#send-message {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  box-sizing: border-box;
+  font-family: 'Jura';
+}
+
+input {
+    width: 500px;
+    height: 30px;
+}
+
+#send-message {
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #718856;
+    border: #718856;
+    border-radius: 5px;
+    height: 60px;
+}
+
+#send-message:hover {
+    background-color: #809568;
+}
