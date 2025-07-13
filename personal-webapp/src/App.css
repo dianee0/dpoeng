@@ -1,15 +1,35 @@
+h1 {
+    text-align: center;
+    font-size: clamp(32px, 8vw, 96px);
+}
+
+h4 {
+    font-size: larger;
+}
+
 .App {
   /* Current background - light green */
   background-color: #e5eae0;
 
   /* Ensure background covers full viewport */
-  min-height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
 
   /* Set Jura as the default font family */
   font-family: "Jura", sans-serif;
+}
+
+.section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing-section {
+  padding-top: 60px; /* Account for navbar */
 }
 
 .main-content {
