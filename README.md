@@ -2,16 +2,38 @@
 
 This project contains scripts for my personal website!
 <img width="2940" height="1664" alt="Image" src="https://github.com/user-attachments/assets/ae80def2-1c5e-412f-8fed-56d474bb8956" />
+
 ## Technolgies used:
 
 React, javascript, CSS, and designed with Figma!
 
-## To start the project, you can run:
+## Getting Started
 
-### cd personal-webapp
+### Installation
 
-Which will take you to the correct path. \
-`The following instructions are obtain via React format by running npx create-react-app <project-name>` 
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/yourusername/your-repo-name.git
+   cd your-repo-name
+   ```
+
+2. Install dependencies
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server
+
+   ```bash
+   npm start
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+`The following instructions are obtain via React format by running npx create-react-app <project-name>`
+
 ### `npm start`
 
 Runs the app in the development mode.\
