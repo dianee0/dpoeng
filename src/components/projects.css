@@ -18,7 +18,7 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .project-card:hover {
@@ -41,9 +41,7 @@
   box-sizing: border-box;
 }
 /* .project-card p {
-  display: flex;
-  margin-top: 0px;
-  padding: 0px 0;
+  justify-content: baseline;
 } */
 
 .project-cards img {
@@ -51,6 +49,7 @@
   max-height: 100%;
   margin-top: auto;
   border-radius: 8px;
+  /* justify-content: end; */
 }
 
 /* .image-carousel {
@@ -77,4 +76,12 @@
 img:hover {
   transform: scale(1.28);
   z-index: 1;
+}
+
+.project-card .image-carousel {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
