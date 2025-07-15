@@ -15,7 +15,7 @@ React, JavaScript, CSS, and designed with Figma!
 
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name/personal-webapp
+   cd your-repo-name
    ```
 
 2. Install dependencies
