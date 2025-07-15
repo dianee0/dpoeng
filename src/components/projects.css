@@ -1,0 +1,80 @@
+.project-cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center; /* Center items horizontally in each grid cell */
+  row-gap: 32px;
+  column-gap: 0px;
+}
+
+.project-card {
+  border: solid #697262;
+  /* border-top: #dfe5da; */
+  width: 370px;
+  height: 620px;
+  border-radius: 10px;
+  background-color: #9daf8a;
+  box-shadow: 0 4px 8px 0 #000000;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 8px 0 #e5eae0;
+}
+
+.project-cards h2 {
+  font-size: 30px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #829868;
+  border-radius: 8px;
+  margin-top: 0px;
+  width: 100%;
+  min-height: 80px; /* Adjust as needed for your tallest title */
+  max-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+/* .project-card p {
+  display: flex;
+  margin-top: 0px;
+  padding: 0px 0;
+} */
+
+.project-cards img {
+  width: 100%;
+  max-height: 100%;
+  margin-top: auto;
+  border-radius: 8px;
+}
+
+/* .image-carousel {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.image-carousel img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  /* border-radius: 8px; */
+  display: block;
+  opacity: 1;
+}
+
+/* .image-carousel img.fade {
+  opacity: 0;
+}
+*/
+img:hover {
+  transform: scale(1.28);
+  z-index: 1;
+}
