@@ -14,7 +14,7 @@
   position: absolute;
   width: clamp(600px, 25vw, 600px);
   height: clamp(600px, 25vw, 600px);
-  background-image: url(/images/imgRectangle.png);
+  background-image: url(/images/imgRectangle2.png);
   background-size: cover;
   background-position: center;
   /* background-color: #000000; */
