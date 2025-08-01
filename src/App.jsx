@@ -5,7 +5,7 @@ import RightImage from "./components/rightImg";
 import Social from "./components/social";
 import ScrollIndicator from "./components/scrollIndicator";
 import Copyright from "./components/copyright";
-import Skills from "./components/skills"
+import Skills from "./components/skills";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
 
@@ -24,15 +24,15 @@ function App() {
         </div>
       </div>
       {/* Section 2 */}
-      <div className="section2">
+      <div id="skills">
         <Skills />
       </div>
       {/* Section 3 */}
-      <div className="section3">
+      <div id="projects">
         <Projects />
       </div>
       {/* Section 4 */}
-      <div className="section4">
+      <div id="contact">
         <Contact />
       </div>
       {/* Footer */}

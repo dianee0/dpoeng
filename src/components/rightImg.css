@@ -12,9 +12,9 @@
 .imageRect {
   box-sizing: border-box;
   position: absolute;
-  width: clamp(400px, 25vw, 400px);
-  height: clamp(400px, 25vw, 400px);
-  background-image: url(/images/imgRectangle.png);
+  width: clamp(500px, 25vw, 500px);
+  height: clamp(500px, 25vw, 500px);
+  background-image: url(/images/imgRectangle2.png);
   background-size: cover;
   background-position: center;
   /* background-color: #000000; */
@@ -26,8 +26,8 @@
 
 .middleRect {
   position: absolute;
-  width: clamp(400px, 25vw, 400px);
-  height: clamp(400px, 25vw, 400px);
+  width: clamp(500px, 25vw, 500px);
+  height: clamp(500px, 25vw, 500px);
   background: #b3c2a4;
   border: 1px solid #000000;
   transform: rotate(-20deg);
@@ -39,8 +39,8 @@
 .bottomRect {
   box-sizing: border-box;
   position: absolute;
-  width: clamp(400px, 25vw, 400px);
-  height: clamp(400px, 25vw, 400px);
+  width: clamp(500px, 25vw, 500px);
+  height: clamp(500px, 25vw, 500px);
   left: clamp(80px, 5vw, 80px);
   top: clamp(30px, 5vw, 80px);
   background: #829072;
