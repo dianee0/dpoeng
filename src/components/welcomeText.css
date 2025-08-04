@@ -32,3 +32,18 @@
   text-align: center;
   color: #000000;
 }
+
+/* smaller screens */
+@media (max-width: 768px) {
+  .welcomeText {
+    max-width: clamp(280px, 85vw, 500px);
+    margin-bottom: clamp(15px, 3vh, 30px);
+  }
+}
+
+@media (max-width: 480px) {
+  .welcomeText {
+    max-width: clamp(250px, 90vw, 400px);
+    margin-bottom: clamp(10px, 2vh, 20px);
+  }
+}

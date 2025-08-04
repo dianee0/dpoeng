@@ -1,10 +1,10 @@
 h1 {
-    text-align: center;
-    font-size: clamp(32px, 8vw, 96px);
+  text-align: center;
+  font-size: clamp(32px, 8vw, 96px);
 }
 
 h4 {
-    font-size: larger;
+  font-size: larger;
 }
 
 .App {
@@ -38,6 +38,7 @@ h4 {
   height: 100vh;
   padding-top: 60px; /* Account for navbar height */
   box-sizing: border-box;
+  overflow-x: clip; /* helped with extra vertical scroll wheel from "hidden" */
 }
 
 .left-container {
@@ -46,7 +47,8 @@ h4 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: clamp(10px, 2vw, 20px);
+  box-sizing: border-box;
 }
 
 .right-container {
@@ -54,5 +56,34 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: clamp(10px, 2vw, 20px);
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments for smaller windows */
+@media (max-width: 1200px) {
+  .left-container,
+  .right-container {
+    padding: clamp(8px, 1.5vw, 15px);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left-container,
+  .right-container {
+    padding: clamp(15px, 3vw, 25px);
+  }
+}
+
+@media (max-width: 480px) {
+  .left-container,
+  .right-container {
+    padding: clamp(10px, 2vw, 20px);
+  }
 }

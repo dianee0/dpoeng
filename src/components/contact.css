@@ -1,44 +1,48 @@
 .contact-section {
-    display: flex;
-    align-items: center; /* vertically center img and the form */
-    justify-content: center; /* Centers the whole section horizontally */
-    gap: 100px; /* gap between image and form */
+  display: flex;
+  align-items: center; /* vertically center img and the form */
+  justify-content: center; /* Centers section horizontally */
+  gap: clamp(20px, 5vw, 100px);
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .picture-side {
-    width: 420px;
-    flex-shrink: 0;
+  width: clamp(200px, 30vw, 420px);
+  flex-shrink: 0;
 }
 
 .picture-side img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .message-container {
-    flex: 1;
-    max-width: 600px;
+  flex: 1;
+  max-width: clamp(300px, 50vw, 600px);
+  min-width: 250px;
 }
 
 .input-container {
-    width: 600px;
-    margin-bottom: 100px;
+  width: 100%;
+  max-width: clamp(300px, 50vw, 600px);
+  margin-bottom: 100px;
 }
 
 .input-container label {
-    font-size: 1.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
 
 .input-container input,
 .input-container textarea {
-    font-size: 1.2rem;
-    height: 48px;
-    padding: 10px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  height: clamp(40px, 6vh, 48px);
+  padding: clamp(8px, 1.5vw, 10px);
 }
 
 .input-container textarea {
-    height: 140px;
+  height: clamp(100px, 15vh, 140px);
 }
 
 /* stacking label on top of input */
@@ -50,23 +54,63 @@
   width: 100%;
   margin-bottom: 8px;
   box-sizing: border-box;
-  font-family: 'Jura';
+  font-family: "Jura";
 }
 
 input {
-    width: 500px;
-    height: 30px;
+  width: 100%;
+  height: clamp(30px, 5vh, 40px);
 }
 
 #send-message {
-    font-size: 1.2rem;
-    color: #ffffff;
-    background-color: #718856;
-    border: #718856;
-    border-radius: 5px;
-    height: 60px;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  color: #ffffff;
+  background-color: #718856;
+  border: #718856;
+  border-radius: 5px;
+  height: clamp(50px, 8vh, 60px);
 }
 
 #send-message:hover {
-    background-color: #809568;
+  background-color: #809568;
+}
+
+/* smaller screens */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 15px;
+  }
+
+  .picture-side {
+    width: clamp(200px, 60vw, 350px);
+  }
+
+  .message-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .input-container {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 50px;
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .contact-section {
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .picture-side {
+    width: clamp(180px, 70vw, 300px);
+  }
+
+  .input-container {
+    margin-bottom: 30px;
+  }
 }
