@@ -29,7 +29,7 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 12px solid #718856;
+  border-top: 12px solid #000000;
   animation: bounce 2s infinite;
   transform: rotate(0deg);
 }
@@ -39,7 +39,7 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 12px solid #718856;
+  border-bottom: 12px solid #000000;
   animation: bounce 2s infinite;
   transform: rotate(180deg);
 }
@@ -47,8 +47,8 @@
 .scroll-text {
   font-family: "Jura", sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  color: #586e3f;
+  font-weight: 800;
+  color: #000000;
   margin: 0;
   text-align: center;
   opacity: 0.7;
