@@ -75,7 +75,7 @@
   flex-shrink: 0; /* Prevent image from shrinking */
 }
 
-img:hover {
+.image-carousel:hover {
   transform: scale(1.15); /* Scale up to pop out of container */
   z-index: 10; /* Higher z-index to appear above other elements */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
@@ -113,7 +113,7 @@ img:hover {
     height: 180px;
   }
 
-  img:hover {
+  .image-carousel:hover {
     transform: scale(1.12);
   }
 }
@@ -136,7 +136,7 @@ img:hover {
     height: 160px;
   }
 
-  img:hover {
+  .image-carousel:hover {
     transform: scale(1.08);
   }
 }
