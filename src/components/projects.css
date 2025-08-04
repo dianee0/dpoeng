@@ -1,23 +1,31 @@
 .project-cards {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(280px, 30vw, 370px), 1fr)
+  );
   justify-items: center; /* Center items horizontally in each grid cell */
-  row-gap: 32px;
-  column-gap: 0px;
+  row-gap: clamp(20px, 4vw, 32px);
+  column-gap: clamp(10px, 2vw, 20px);
+  padding: 0 clamp(10px, 2vw, 20px);
+  box-sizing: border-box;
 }
 
 .project-card {
   border: solid #697262;
   /* border-top: #dfe5da; */
-  width: 370px;
-  height: 620px;
+  width: 100%;
+  max-width: clamp(280px, 30vw, 370px);
+  min-height: clamp(400px, 50vh, 500px);
   border-radius: 10px;
   background-color: #9daf8a;
   box-shadow: 0 4px 8px 0 #000000;
   padding: 5px;
   display: flex;
   flex-direction: column;
+  overflow: visible; /* Allows images to pop out on hover */
+  position: relative;
   /* justify-content: space-between; */
 }
 
@@ -26,62 +34,109 @@
 }
 
 .project-cards h2 {
-  font-size: 30px;
+  font-size: clamp(18px, 2vw, 24px);
   text-align: center;
-  padding: 5px 0;
+  padding: 5px 10px;
   background-color: #829868;
   border-radius: 8px;
   margin-top: 0px;
   width: 100%;
-  min-height: 80px; /* Adjust as needed for your tallest title */
-  max-height: 80px;
+  min-height: clamp(
+    60px,
+    8vh,
+    80px
+  ); /* Adjust as needed for your tallest title */
+  max-height: clamp(60px, 8vh, 80px);
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  flex-shrink: 0; /* Prevent title from shrinking */
 }
-/* .project-card p {
-  justify-content: baseline;
-} */
 
 .project-cards img {
   width: 100%;
-  max-height: 100%;
-  margin-top: auto;
+  height: 200px; /* Fixed height for images */
+  object-fit: cover;
   border-radius: 8px;
+  flex-shrink: 0; /* Prevent image from shrinking */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
   /* justify-content: end; */
 }
 
-/* .image-carousel {
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-
 .image-carousel img {
   width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+  height: 200px; /* Fixed height for carousel images */
+  object-fit: cover; /* Changed from contain to cover for better fit */
   /* border-radius: 8px; */
   display: block;
   opacity: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0; /* Prevent image from shrinking */
 }
 
-/* .image-carousel img.fade {
-  opacity: 0;
-}
-*/
 img:hover {
-  transform: scale(1.28);
-  z-index: 1;
+  transform: scale(1.15); /* Scale up to pop out of container */
+  z-index: 10; /* Higher z-index to appear above other elements */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
 }
 
 .project-card .image-carousel {
   margin-top: auto;
   width: 100%;
+  height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: visible; /* images to pop out on hover */
+  border-radius: 8px;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Smaller screens */
+@media (max-width: 768px) {
+  .project-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .project-card {
+    max-width: 100%;
+    min-height: clamp(350px, 45vh, 450px);
+  }
+
+  .project-cards img,
+  .image-carousel img,
+  .project-card .image-carousel {
+    height: 180px;
+  }
+
+  img:hover {
+    transform: scale(1.12);
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  .project-cards {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .project-card {
+    min-height: clamp(300px, 40vh, 400px);
+  }
+
+  .project-cards img,
+  .image-carousel img,
+  .project-card .image-carousel {
+    height: 160px;
+  }
+
+  img:hover {
+    transform: scale(1.08);
+  }
 }

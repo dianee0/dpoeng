@@ -1,26 +1,26 @@
-
 .card {
-    box-shadow: 0 4px 8px 0 #718856;
-    background-color: #f6f7f5;
-    width: 350px;
-    border-radius: 25px;
+  box-shadow: 0 4px 8px 0 #718856;
+  background-color: #f6f7f5;
+  width: clamp(280px, 30vw, 350px);
+  border-radius: 25px;
 }
 
-.Cards{
-    display: flex;
-    gap: 60px;
-    justify-content: center;
-    
+.Cards {
+  display: flex;
+  gap: clamp(20px, 4vw, 60px);
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 clamp(10px, 2vw, 20px);
+  box-sizing: border-box;
 }
 
-.smallCard{
-    /* background-color: #ffffff; */
-    box-shadow: 0 1px 8px 0 #718856;
-    background-color: #f6f7f5;
-    width: 270px;
-    height: 60px;
-    padding-inline-start: 10px;
-    border-radius: 15px;
+.smallCard {
+  box-shadow: 0 1px 8px 0 #718856;
+  background-color: #f6f7f5;
+  width: clamp(220px, 25vw, 270px);
+  height: clamp(50px, 8vh, 60px);
+  padding-inline-start: 10px;
+  border-radius: 15px;
 }
 
 .smallCard:last-child {
@@ -33,7 +33,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px
+  gap: 16px;
 }
 
 .card:hover {
@@ -45,4 +45,36 @@
   border: none;
   border-top: 2px solid #718856;
   margin: 0px 0 20px 0;
+}
+
+/* smaller screens */
+@media (max-width: 768px) {
+  .Cards {
+    gap: 30px;
+    padding: 0 15px;
+  }
+
+  .card {
+    width: clamp(250px, 40vw, 320px);
+  }
+
+  .smallCard {
+    width: clamp(200px, 35vw, 250px);
+  }
+}
+
+/* even smaller screens */
+@media (max-width: 480px) {
+  .Cards {
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: clamp(220px, 80vw, 300px);
+  }
+
+  .smallCard {
+    width: clamp(180px, 70vw, 230px);
+  }
 }
