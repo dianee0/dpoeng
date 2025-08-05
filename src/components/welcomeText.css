@@ -1,7 +1,3 @@
-/* .welcomeText {
-
-} */
-
 .welcomeText {
   display: flex;
   flex-direction: column;
@@ -9,23 +5,42 @@
   justify-content: flex-start;
   text-align: center;
   max-width: 600px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
-.mainText {
+.mask {
+  overflow: hidden;
+}
+
+.mask p {
+  margin: 0;
+  font-style: italic;
+}
+
+.mask h1 {
+  margin: 0;
+}
+
+.hide {
+  transform: translateY(-100%);
+  /* Removed CSS animation to let GSAP handle it */
+}
+
+#mainText {
   font-family: "Jura";
   font-style: normal;
   font-weight: 700;
   font-size: clamp(32px, 8vw, 96px);
+  /* font-style: italic; */
   line-height: 1.1;
   text-align: center;
   color: #000000;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 /* My name is Diane Poeng and I am an aspiring Full-Stack Developer. */
-.subText {
+#sub-text {
   font-family: "Jura";
-  font-style: normal;
+  /* font-style: italic; */
   font-weight: 400;
   font-size: clamp(9px, 3vw, 24px);
   line-height: 1.2;
@@ -33,8 +48,10 @@
   color: #000000;
 }
 
+/* Removed the animation-delay and animation-name properties since GSAP will handle timing */
+
 /* smaller screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .welcomeText {
     max-width: clamp(280px, 85vw, 500px);
     margin-bottom: clamp(15px, 3vh, 30px);
@@ -46,4 +63,4 @@
     max-width: clamp(250px, 90vw, 400px);
     margin-bottom: clamp(10px, 2vh, 20px);
   }
-}
+} */
