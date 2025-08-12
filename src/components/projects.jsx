@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./projects.css";
 
 function Projects() {
@@ -11,6 +11,7 @@ function Projects() {
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(false);
+  const projectCardsRef = useRef([]);
 
   // Auto-cycle images every 8 seconds with fade
   useEffect(() => {
@@ -23,6 +24,30 @@ function Projects() {
     }, 8000); // 8 seconds
     return () => clearInterval(interval);
   }, [tradingCardImages.length]);
+
+  // Scroll-triggered animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all project cards
+    projectCardsRef.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   // Handler to go to the next image
   const nextImage = () => {
@@ -40,7 +65,11 @@ function Projects() {
     <div>
       <h1>Projects</h1>
       <div className="project-cards">
-        <div className="project-card">
+        <div
+          className="project-card"
+          ref={(el) => (projectCardsRef.current[0] = el)}
+          style={{ "--animation-order": 0 }}
+        >
           <h2>UCSC Economic Trading Using GenAI App</h2>
           <p>
             An application for UCSC researchers to study trader behavior when
@@ -56,7 +85,11 @@ function Projects() {
             <img src="./images/website-photos/website9.png"></img>
           </div>
         </div>
-        <div className="project-card">
+        <div
+          className="project-card"
+          ref={(el) => (projectCardsRef.current[1] = el)}
+          style={{ "--animation-order": 1 }}
+        >
           <h2>Trading Card Management App</h2>
           <p>
             TCG Tracker is a full-stack web application that helps Pokémon card
@@ -76,7 +109,11 @@ function Projects() {
             />
           </div>
         </div>
-        <div className="project-card">
+        <div
+          className="project-card"
+          ref={(el) => (projectCardsRef.current[2] = el)}
+          style={{ "--animation-order": 2 }}
+        >
           <h2>Urban Rodent Rush</h2>
           <p>
             Urban Rodent Rush is a 2D side-scrolling platformer developed in
@@ -90,7 +127,11 @@ function Projects() {
             <img src="./images/website-photos/website4.png"></img>
           </div>
         </div>
-        <div className="project-card">
+        <div
+          className="project-card"
+          ref={(el) => (projectCardsRef.current[3] = el)}
+          style={{ "--animation-order": 3 }}
+        >
           <h2>First-Person Exploration Application </h2>
           <p>
             An immersive 3D exploration app built with Three.js that allows
@@ -105,7 +146,11 @@ function Projects() {
             <img src="../images/website-photos/website0.png"></img>
           </div>
         </div>
-        <div className="project-card">
+        <div
+          className="project-card"
+          ref={(el) => (projectCardsRef.current[4] = el)}
+          style={{ "--animation-order": 4 }}
+        >
           <h2>S.L.U.G. Project</h2>
           <p>
             {" "}
@@ -117,7 +162,7 @@ function Projects() {
             hovering on illustrated markers. Each point links to a dedicated
             page with photos, location descriptions, coordinates, and stories
             behind the site. The goal is to encourage exploration, appreciation
-            of campus culture, and fun outdoor engagement with UCSC’s unique
+            of campus culture, and fun outdoor engagement with UCSC's unique
             environment.
           </p>
           <div className="image-carousel">

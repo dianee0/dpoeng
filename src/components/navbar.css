@@ -28,12 +28,14 @@
   border: 1px solid #c7d2bc;
   border-radius: 10px;
   z-index: 1000;
+  animation: slideDown 0.8s ease-out;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
   gap: 20px;
+  animation: fadeInRight 1s ease-out 0.3s both;
 }
 
 .animated-logo {
@@ -41,6 +43,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: fadeInLeft 1s ease-out 0.3s both;
+  transition: transform 0.3s ease;
+}
+
+.animated-logo:hover {
+  transform: scale(1.1);
 }
 
 .navbar-about,
@@ -64,6 +72,8 @@
   cursor: pointer;
   min-width: 70px;
   height: 35px;
+  position: relative;
+  overflow: hidden;
 }
 
 .navbar-about:hover,
@@ -76,6 +86,7 @@
   text-decoration: none;
   position: relative;
   transition: all 0.5s ease;
+  transform: translateY(-2px);
 }
 
 .navbar-about::before,
@@ -103,6 +114,40 @@
   visibility: visible;
   clip: rect(0, 900px, 0, 0);
   animation: greenFlicker 1.5s infinite alternate;
+}
+
+/* Entrance animations */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Large screens (desktop) */

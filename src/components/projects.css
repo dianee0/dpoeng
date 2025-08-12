@@ -27,10 +27,22 @@
   overflow: visible; /* Allows images to pop out on hover */
   position: relative;
   /* justify-content: space-between; */
+  transition: all 0.3s ease;
+  animation: slideInUp 0.8s ease-out both;
+  animation-delay: calc(var(--animation-order) * 0.2s);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.project-card.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-card:hover {
-  box-shadow: 0 4px 8px 0 #e5eae0;
+  box-shadow: 0 8px 16px 0 #000000;
+  transform: translateY(-5px);
+  background-color: #a8bc95;
 }
 
 .project-cards h2 {
@@ -52,6 +64,11 @@
   justify-content: center;
   box-sizing: border-box;
   flex-shrink: 0; /* Prevent title from shrinking */
+  transition: background-color 0.3s ease;
+}
+
+.project-card:hover h2 {
+  background-color: #8fa573;
 }
 
 .project-cards img {
@@ -71,8 +88,12 @@
   /* border-radius: 8px; */
   display: block;
   opacity: 1;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.7s ease;
   flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.image-carousel img.fade {
+  opacity: 0;
 }
 
 .image-carousel:hover {
@@ -92,6 +113,18 @@
   border-radius: 8px;
   flex-shrink: 0;
   position: relative;
+}
+
+/* Entrance animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Smaller screens */
