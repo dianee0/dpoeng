@@ -6,6 +6,14 @@
   margin-top: clamp(20px, 3vh, 30px);
 }
 
+.hide {
+  transform: translateY(-100%);
+}
+
+.mask {
+  overflow: hidden;
+}
+
 .social-link {
   display: flex;
   align-items: center;
@@ -29,7 +37,7 @@
 
 .social-link:hover {
   background-color: #718856;
-  transform: translateY(-2px);
+  /* transform: translateY(-2px); */
   border-color: #718856;
 }
 
@@ -38,7 +46,7 @@
 }
 
 /* smaller screens */
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   .social {
     gap: 12px;
     margin-top: 15px;
@@ -54,4 +62,4 @@
     width: 20px;
     height: 20px;
   }
-}
+} */

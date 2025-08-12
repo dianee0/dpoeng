@@ -9,11 +9,13 @@
   gap: 10px;
   z-index: 100;
   opacity: 0.8;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+  animation: fadeInUp 1s ease-out 2s both;
 }
 
 .scroll-indicator:hover {
   opacity: 1;
+  transform: translateX(-50%) scale(1.1);
 }
 
 .scroll-arrow {
@@ -22,6 +24,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.scroll-arrow:hover {
+  transform: scale(1.2);
 }
 
 .arrow-down {
@@ -32,6 +39,12 @@
   border-top: 12px solid #000000;
   animation: bounce 2s infinite;
   transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.arrow-down:hover {
+  border-top-color: #718856;
+  filter: drop-shadow(0 0 5px rgba(113, 136, 86, 0.5));
 }
 
 .arrow-up {
@@ -42,6 +55,12 @@
   border-bottom: 12px solid #000000;
   animation: bounce 2s infinite;
   transform: rotate(180deg);
+  transition: all 0.3s ease;
+}
+
+.arrow-up:hover {
+  border-bottom-color: #718856;
+  filter: drop-shadow(0 0 5px rgba(113, 136, 86, 0.5));
 }
 
 .scroll-text {
@@ -52,6 +71,13 @@
   margin: 0;
   text-align: center;
   opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-text {
+  opacity: 1;
+  color: #718856;
+  text-shadow: 0 0 5px rgba(113, 136, 86, 0.3);
 }
 
 @keyframes bounce {
@@ -67,6 +93,17 @@
   }
   60% {
     transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 0.8;
+    transform: translateX(-50%) translateY(0);
   }
 }
 

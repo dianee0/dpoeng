@@ -75,6 +75,25 @@ input {
   background-color: #809568;
 }
 
+/* style for the status message */
+.status-message {
+  margin-top: 10px;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  text-align: center;
+}
+
+.status-message.success {
+  color: #718856;
+}
+
+.status-message.error {
+  color: #d32f2f;
+}
+
+.status-message.sending {
+  color: #718856;
+}
+
 /* smaller screens */
 @media (max-width: 768px) {
   .contact-section {
