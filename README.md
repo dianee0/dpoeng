@@ -1,7 +1,7 @@
 # Welcome to My Personal Website
 
 This project contains scripts for my personal website!
-<img width="2940" height="1664" alt="Image" src="https://github.com/user-attachments/assets/ae80def2-1c5e-412f-8fed-56d474bb8956" />
+<img width="2938" height="1664" alt="Image" src="https://github.com/user-attachments/assets/3a0e2732-ff2a-4d20-a1ac-c3b0dfdb3cd1" />
 
 ## Technologies used:
 
