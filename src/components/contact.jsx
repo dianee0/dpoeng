@@ -1,8 +1,68 @@
 import "./contact.css";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 function Contact() {
   const [formStatus, setFormStatus] = useState("");
+  const headingRef = useRef(null);
+  const imageRef = useRef(null);
+  const formRef = useRef(null);
+  const inputRefs = useRef([]);
+
+  // Scroll-triggered animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add staggered delays for form elements
+            if (entry.target.classList.contains("form-heading")) {
+              setTimeout(() => entry.target.classList.add("animate"), 600);
+            } else if (entry.target.tagName === "LABEL") {
+              const index = inputRefs.current.findIndex(
+                (ref) => ref === entry.target
+              );
+              setTimeout(
+                () => entry.target.classList.add("animate"),
+                800 + index * 100
+              );
+            } else if (
+              entry.target.tagName === "INPUT" ||
+              entry.target.tagName === "TEXTAREA"
+            ) {
+              const index = inputRefs.current.findIndex(
+                (ref) => ref === entry.target
+              );
+              setTimeout(
+                () => entry.target.classList.add("animate"),
+                900 + index * 100
+              );
+            } else if (entry.target.id === "send-message") {
+              setTimeout(() => entry.target.classList.add("animate"), 800);
+            } else {
+              entry.target.classList.add("animate");
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      }
+    );
+
+    // Observe all elements
+    const elements = [
+      headingRef.current,
+      imageRef.current,
+      formRef.current,
+      ...inputRefs.current,
+    ];
+    elements.forEach((element) => {
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,12 +89,15 @@ function Contact() {
   };
   return (
     <div>
-      <h1>Get In Touch</h1>
+      <h1 ref={headingRef} className="contact-heading">
+        Get In Touch
+      </h1>
       <div className="contact-section">
-        <div className="picture-side">
+        <div className="picture-side" ref={imageRef}>
           <img src="/images/imgRectangle.png" alt="Contact" />
         </div>
         <form
+          ref={formRef}
           name="contact"
           method="POST"
           data-netlify="true"
@@ -49,18 +112,29 @@ function Contact() {
             <input name="bot-field" />
           </div>
 
-          <h2>Send a message</h2>
+          <h2
+            ref={(el) => (inputRefs.current[0] = el)}
+            className="form-heading"
+          >
+            Send a message
+          </h2>
           <div className="input-container">
-            <label htmlFor="fname">Name</label>
+            <label htmlFor="fname" ref={(el) => (inputRefs.current[1] = el)}>
+              Name
+            </label>
             <input
+              ref={(el) => (inputRefs.current[2] = el)}
               type="text"
               name="firstname"
               placeholder="Your Name"
               required
             />
 
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" ref={(el) => (inputRefs.current[3] = el)}>
+              Email
+            </label>
             <input
+              ref={(el) => (inputRefs.current[4] = el)}
               className="email"
               type="email"
               name="email"
@@ -68,15 +142,22 @@ function Contact() {
               required
             />
 
-            <label htmlFor="message">Message</label>
+            <label htmlFor="message" ref={(el) => (inputRefs.current[5] = el)}>
+              Message
+            </label>
             <textarea
+              ref={(el) => (inputRefs.current[6] = el)}
               className="message"
               name="message"
               placeholder="Your message"
               required
             ></textarea>
 
-            <button type="submit" id="send-message">
+            <button
+              ref={(el) => (inputRefs.current[7] = el)}
+              type="submit"
+              id="send-message"
+            >
               Submit Message
             </button>
 
