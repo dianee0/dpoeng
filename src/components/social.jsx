@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { gsap } from "gsap";
 import "./social.css";
 
 function Social() {
