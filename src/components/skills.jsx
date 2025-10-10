@@ -6,10 +6,41 @@ import { motion } from "motion/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const DEVICON = {
+  // Languages
+  Python: "devicon-python-plain colored",
+  HTML: "devicon-html5-plain colored",
+  CSS: "devicon-css3-plain colored",
+  Javascript: "devicon-javascript-plain colored",
+  C: "devicon-c-plain colored",
+  "C++": "devicon-cplusplus-plain colored",
+
+  // Frontend
+  React: "devicon-react-original colored",
+  "Three.js": "devicon-threejs-original", // some themes lack 'colored' for threejs
+  Bootstrap: "devicon-bootstrap-plain colored",
+  Tailwind: "devicon-tailwindcss-plain colored",
+  Figma: "devicon-figma-plain colored",
+
+  // Backend
+  Node: "devicon-nodejs-plain colored",
+  Express: "devicon-express-original", // usually monochrome
+  Firebase: "devicon-firebase-plain colored",
+  SQLite: "devicon-sqlite-plain colored", // if this fails on your build, remove "colored"
+  "Valkey/Redis": "devicon-redis-plain colored", // no Valkey icon; Redis is closest
+
+  // Tools
+  Git: "devicon-git-plain colored",
+  Linux: "devicon-linux-plain",
+  Docker: "devicon-docker-plain colored",
+  Jira: "devicon-jira-plain colored",
+  // "Agile Methodologies & Scrum": (no icon)
+};
+
 const skillCategories = [
   {
     title: "Languages",
-    items: ["Javascript", "Python", "HTML", "CSS", "C", "C++"],
+    items: ["Python", "HTML", "CSS", "Javascript", "C", "C++"],
   },
   {
     title: "Frontend",
@@ -145,6 +176,8 @@ function Skills() {
                   typeof item === "object" && item.progress !== undefined;
                 const itemName = hasProgress ? item.name : item;
 
+                const iconClass = DEVICON[itemName];
+
                 return (
                   <div className="smallCard" key={itemName || index}>
                     {hasProgress ? (
@@ -162,7 +195,10 @@ function Skills() {
                         </div>
                       </div>
                     ) : (
-                      <p>{itemName}</p>
+                      <div className="skill-content">
+                        {iconClass && <i className={iconClass}></i>}
+                        <p>{itemName}</p>
+                      </div>
                     )}
                   </div>
                 );
