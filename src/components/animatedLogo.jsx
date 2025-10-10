@@ -18,8 +18,16 @@ function AnimatedLogo() {
     return () => clearInterval(interval);
   }, []);
 
+  const playClickSound = () => {
+    const audio = new Audio("/sfx/click.wav");
+    audio.volume = 0.5; // Adjust volume (0.0 to 1.0)
+    audio.play().catch((error) => {
+      console.log("Audio playback failed:", error);
+    });
+  };
+
   return (
-    <div className="animated-logo">
+    <div className="animated-logo" onMouseEnter={playClickSound}>
       <img
         src={frames[frame]}
         alt="Animated Logo"
