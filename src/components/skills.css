@@ -1,3 +1,8 @@
+.skills-container {
+  padding: 0 clamp(10px, 2vw, 20px);
+  box-sizing: border-box;
+}
+
 .card {
   box-shadow: 0 4px 8px 0 #718856;
   background-color: #f6f7f5;
@@ -11,8 +16,9 @@
   gap: clamp(20px, 4vw, 60px);
   justify-content: center;
   flex-wrap: wrap;
-  padding: 0 clamp(10px, 2vw, 20px);
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .smallCard {
@@ -20,9 +26,11 @@
   background-color: #f6f7f5;
   width: clamp(220px, 25vw, 270px);
   height: clamp(50px, 8vh, 60px);
-  padding-inline-start: 10px;
+  padding: 0 10px; /* Changed to symmetric horizontal padding */
   border-radius: 15px;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center; /* Center text vertically */
 }
 
 .smallCard:hover {
@@ -37,7 +45,7 @@
 
 /* Add some padding inside the card container */
 .container {
-  padding: 2px 16px;
+  padding: 16px 0px; /* Changed to vertical padding only to keep cards centered */
   display: flex;
   flex-direction: column;
   align-items: center;

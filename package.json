@@ -2,8 +2,10 @@
   "name": "personal-webapp",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "gsap": "^3.13.0",
+    "motion": "^12.23.22",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3"
@@ -15,7 +17,11 @@
     "test": "echo \"Add your test command here or use Vitest later\""
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.14",
     "@vitejs/plugin-react": "^4.0.0",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14",
     "vite": "^7.0.4"
   }
 }
