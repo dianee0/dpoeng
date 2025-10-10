@@ -11,14 +11,31 @@ const skillCategories = [
     title: "Languages",
     items: ["Javascript", "Python", "HTML", "CSS", "C", "C++"],
   },
-  { title: "Frontend", items: ["React", "Three.js", "Bootstrap", "Figma"] },
+  {
+    title: "Frontend",
+    items: ["React", "Three.js", "Bootstrap", "Tailwind", "Figma"],
+  },
   {
     title: "Backend",
-    items: ["Node.js", "Firebase", "SQLite", "Valkey/Redis"],
+    items: ["Node", "Express", "Firebase", "SQLite", "Valkey/Redis"],
   },
   {
     title: "Tools",
-    items: ["Git", "Linux", "Docker", "Google Cloud Vision API"],
+    items: ["Git", "Linux", "Docker", "Jira", "Agile Methodologies & Scrum"],
+  },
+  {
+    title: "Certifications",
+    items: [
+      {
+        name: "Complete A.I. & Machine Learning, Data Science Bootcamp - ZTM",
+        progress: 24,
+      },
+      {
+        name: "The Complete Full-Stack Web Development Bootcamp - Udemy",
+        progress: 0,
+      },
+      { name: "Data Structures + Algorithms - ZTM", progress: 8 },
+    ],
   },
 ];
 
@@ -124,11 +141,33 @@ function Skills() {
                 <b>{category.title}</b>
               </h4>
               <hr className="card-separator"></hr>
-              {category.items.map((item) => (
-                <div className="smallCard" key={item}>
-                  <p>{item}</p>
-                </div>
-              ))}
+              {category.items.map((item, index) => {
+                const hasProgress =
+                  typeof item === "object" && item.progress !== undefined;
+                const itemName = hasProgress ? item.name : item;
+
+                return (
+                  <div className="smallCard" key={itemName || index}>
+                    {hasProgress ? (
+                      <div className="cert-wrapper">
+                        <p className="cert-name">{itemName}</p>
+                        <div className="progress-bar-container">
+                          <div
+                            className="progress-bar-fill"
+                            style={{ width: `${item.progress}%` }}
+                          >
+                            <span className="progress-text">
+                              {item.progress}%
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <p>{itemName}</p>
+                    )}
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}
