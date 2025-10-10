@@ -1,5 +1,9 @@
 import "./contact.css";
 import { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Contact() {
   const [formStatus, setFormStatus] = useState("");
@@ -8,60 +12,92 @@ function Contact() {
   const formRef = useRef(null);
   const inputRefs = useRef([]);
 
-  // Scroll-triggered animations
+  // GSAP scroll-triggered animations
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // Add staggered delays for form elements
-            if (entry.target.classList.contains("form-heading")) {
-              setTimeout(() => entry.target.classList.add("animate"), 600);
-            } else if (entry.target.tagName === "LABEL") {
-              const index = inputRefs.current.findIndex(
-                (ref) => ref === entry.target
-              );
-              setTimeout(
-                () => entry.target.classList.add("animate"),
-                800 + index * 100
-              );
-            } else if (
-              entry.target.tagName === "INPUT" ||
-              entry.target.tagName === "TEXTAREA"
-            ) {
-              const index = inputRefs.current.findIndex(
-                (ref) => ref === entry.target
-              );
-              setTimeout(
-                () => entry.target.classList.add("animate"),
-                900 + index * 100
-              );
-            } else if (entry.target.id === "send-message") {
-              setTimeout(() => entry.target.classList.add("animate"), 800);
-            } else {
-              entry.target.classList.add("animate");
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
+    // Animate heading
+    if (headingRef.current) {
+      gsap.fromTo(
+        headingRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: headingRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
 
-    // Observe all elements
-    const elements = [
-      headingRef.current,
-      imageRef.current,
-      formRef.current,
-      ...inputRefs.current,
-    ];
-    elements.forEach((element) => {
-      if (element) observer.observe(element);
-    });
+    // Animate image (slide from left)
+    if (imageRef.current) {
+      gsap.fromTo(
+        imageRef.current,
+        { opacity: 0, x: -30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          delay: 0.2,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: imageRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
 
-    return () => observer.disconnect();
+    // Animate form container (slide from right)
+    if (formRef.current) {
+      gsap.fromTo(
+        formRef.current,
+        { opacity: 0, x: 30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          delay: 0.4,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    // Animate form elements with stagger
+    const formElements = inputRefs.current.filter((el) => el !== null);
+    if (formElements.length > 0) {
+      gsap.fromTo(
+        formElements,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          delay: 0.6,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 75%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   const handleSubmit = async (e) => {

@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./projects.css";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Projects() {
   // Array of images for the Trading Card Management App
@@ -25,28 +29,35 @@ function Projects() {
     return () => clearInterval(interval);
   }, [tradingCardImages.length]);
 
-  // Scroll-triggered animations
+  // GSAP scroll-triggered animations
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      }
-    );
+    projectCardsRef.current.forEach((card, index) => {
+      if (!card) return;
 
-    // Observe all project cards
-    projectCardsRef.current.forEach((card) => {
-      if (card) observer.observe(card);
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+          delay: index * 0.15, // Staggered delay based on card position
+        }
+      );
     });
 
-    return () => observer.disconnect();
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   // Handler to go to the next image
@@ -68,7 +79,6 @@ function Projects() {
         <div
           className="project-card"
           ref={(el) => (projectCardsRef.current[0] = el)}
-          style={{ "--animation-order": 0 }}
         >
           <h2>UCSC Economic Trading Using GenAI App</h2>
           <p>
@@ -88,7 +98,6 @@ function Projects() {
         <div
           className="project-card"
           ref={(el) => (projectCardsRef.current[1] = el)}
-          style={{ "--animation-order": 1 }}
         >
           <h2>Trading Card Management App</h2>
           <p>
@@ -112,7 +121,6 @@ function Projects() {
         <div
           className="project-card"
           ref={(el) => (projectCardsRef.current[2] = el)}
-          style={{ "--animation-order": 2 }}
         >
           <h2>Urban Rodent Rush</h2>
           <p>
@@ -130,7 +138,6 @@ function Projects() {
         <div
           className="project-card"
           ref={(el) => (projectCardsRef.current[3] = el)}
-          style={{ "--animation-order": 3 }}
         >
           <h2>First-Person Exploration Application </h2>
           <p>
@@ -149,7 +156,6 @@ function Projects() {
         <div
           className="project-card"
           ref={(el) => (projectCardsRef.current[4] = el)}
-          style={{ "--animation-order": 4 }}
         >
           <h2>S.L.U.G. Project</h2>
           <p>

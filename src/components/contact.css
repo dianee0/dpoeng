@@ -1,14 +1,3 @@
-.contact-heading {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.contact-heading.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .contact-section {
   display: flex;
   align-items: center; /* vertically center img and the form */
@@ -21,15 +10,6 @@
 .picture-side {
   width: clamp(200px, 30vw, 420px);
   flex-shrink: 0;
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  transition-delay: 0.2s;
-}
-
-.picture-side.animate {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .picture-side img {
@@ -42,15 +22,6 @@
   flex: 1;
   max-width: clamp(300px, 50vw, 600px);
   min-width: 250px;
-  opacity: 0;
-  transform: translateX(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  transition-delay: 0.4s;
-}
-
-.message-container.animate {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .input-container {
@@ -59,29 +30,8 @@
   margin-bottom: 100px;
 }
 
-/* Form heading animation */
-.form-heading {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  transition-delay: 0.6s;
-}
-
-.form-heading.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .input-container label {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.input-container label.animate {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .input-container input,
@@ -89,15 +39,6 @@
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   height: clamp(40px, 6vh, 48px);
   padding: clamp(8px, 1.5vw, 10px);
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-
-.input-container input.animate,
-.input-container textarea.animate {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .input-container textarea {
@@ -128,15 +69,7 @@ input {
   border: #718856;
   border-radius: 5px;
   height: clamp(50px, 8vh, 60px);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  transition-delay: 0.8s;
-}
-
-#send-message.animate {
-  opacity: 1;
-  transform: translateY(0);
+  transition: background-color 0.3s ease;
 }
 
 #send-message:hover {
