@@ -37,14 +37,13 @@
 .project-card:hover {
   box-shadow: 0 8px 16px 0 #000000;
   transform: translateY(-5px);
-  background-color: #a8bc95;
+  background-color: #a4b793;
 }
 
 .project-cards h2 {
   font-size: clamp(18px, 2vw, 24px);
   text-align: center;
   padding: 5px 10px;
-  background-color: #829868;
   border-radius: 8px;
   margin-top: 0px;
   width: 100%;
@@ -60,10 +59,6 @@
   box-sizing: border-box;
   flex-shrink: 0; /* Prevent title from shrinking */
   transition: background-color 0.3s ease;
-}
-
-.project-card:hover h2 {
-  background-color: #8fa573;
 }
 
 .project-cards img {

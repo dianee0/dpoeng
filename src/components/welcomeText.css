@@ -6,10 +6,25 @@
   text-align: center;
   max-width: 600px;
   margin-bottom: 10px;
+  position: relative; /* Added for absolute positioning of SVG */
+}
+
+.welcomeText svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 110%;
+  height: auto;
+  z-index: 0; /* Behind the text */
+  opacity: 0.3;
+  pointer-events: none; /* Prevents interaction */
 }
 
 .mask {
   overflow: hidden;
+  position: relative; /* Ensure text stays above SVG */
+  z-index: 1; /* Above the SVG */
 }
 
 .mask p {

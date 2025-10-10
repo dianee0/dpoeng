@@ -4,10 +4,10 @@ import WelcomeText from "./components/welcomeText";
 import RightImage from "./components/rightImg";
 import Social from "./components/social";
 import ScrollIndicator from "./components/scrollIndicator";
-import Copyright from "./components/copyright";
 import Skills from "./components/skills";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -36,8 +36,8 @@ function App() {
         <Contact />
       </div>
       {/* Footer */}
+      <Footer />
       <ScrollIndicator />
-      <Copyright />
     </div>
   );
 }
