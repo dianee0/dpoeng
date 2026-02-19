@@ -62,10 +62,7 @@
   color: #000000;
 }
 
-/* Removed the animation-delay and animation-name properties since GSAP will handle timing */
-
-/* smaller screens */
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
   .welcomeText {
     max-width: clamp(280px, 85vw, 500px);
     margin-bottom: clamp(15px, 3vh, 30px);
@@ -77,4 +74,4 @@
     max-width: clamp(250px, 90vw, 400px);
     margin-bottom: clamp(10px, 2vh, 20px);
   }
-} */
+}

@@ -40,7 +40,7 @@ function WelcomeText() {
 
   return (
     <div className="welcomeText">
-      <svg viewBox="0 0 557 435" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="-45 -30 720 470" fill="none" xmlns="http://www.w3.org/2000/svg">
         <motion.path
           initial={{ pathLength: 0 }}
           whileInView={{ pathLength: 1 }}
