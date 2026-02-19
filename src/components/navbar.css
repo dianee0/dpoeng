@@ -227,13 +227,27 @@
 @keyframes greenFlicker {
   0%,
   100% {
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #718856,
-      0 0 20px #718856, 0 0 25px #718856, 0 0 30px #718856, 0 0 35px #718856;
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 15px #718856,
+      0 0 20px #718856,
+      0 0 25px #718856,
+      0 0 30px #718856,
+      0 0 35px #718856;
   }
   50% {
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #718856,
-      0 0 20px #718856, 0 0 25px #718856, 0 0 30px #718856, 0 0 35px #718856,
-      0 0 40px #718856, 0 0 50px #718856, 0 0 75px #718856;
+    text-shadow:
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 15px #718856,
+      0 0 20px #718856,
+      0 0 25px #718856,
+      0 0 30px #718856,
+      0 0 35px #718856,
+      0 0 40px #718856,
+      0 0 50px #718856,
+      0 0 75px #718856;
   }
 }
 /* https://menuhover.com/ */

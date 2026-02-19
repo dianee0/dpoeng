@@ -6,17 +6,16 @@
   align-items: center;
   justify-content: center;
   background: transparent;
-  /* increase/decrease margin space dep on w/h size for rectangles/imageRect */
-  margin-top: clamp(350px, 8vh, 300px);
-  margin-bottom: clamp(350px, 8vh, 300px);
+  margin-top: clamp(200px, 35vh, 350px);
+  margin-bottom: clamp(200px, 35vh, 350px);
   /* overflow: hidden; */
 }
 
 .imageRect {
   box-sizing: border-box;
   position: absolute;
-  width: clamp(420px, 20vw, 500px);
-  height: clamp(420px, 20vw, 500px);
+  width: clamp(320px, 20vw, 500px);
+  height: clamp(320px, 20vw, 500px);
   background-image: url(/images/imgRectangle2.png);
   background-size: cover;
   background-position: center;
@@ -33,8 +32,8 @@
 
 .middleRect {
   position: absolute;
-  width: clamp(420px, 20vw, 500px);
-  height: clamp(420px, 20vw, 500px);
+  width: clamp(320px, 20vw, 500px);
+  height: clamp(320px, 20vw, 500px);
   background: #b3c2a4;
   border: 1px solid #000000;
   /* Center the element and add rotation */
@@ -47,8 +46,8 @@
 .bottomRect {
   box-sizing: border-box;
   position: absolute;
-  width: clamp(420px, 20vw, 500px);
-  height: clamp(420px, 20vw, 500px);
+  width: clamp(320px, 20vw, 800px);
+  height: clamp(320px, 20vw, 800px);
   background: #829072;
   border: 1px solid #000000;
   /* Center the element and add rotation with offset */
